@@ -6,13 +6,15 @@ export default class B extends Component {
     return (
       <div>
         <MyContext.Consumer>
-        {/* child of consumer is always a function */}
         {
-            (context) => (
-            <div>
-            <button onClick={context.decrementY}>decrementY by 1</button>
-            </div>
-            )
+            (context) => {
+              const { dispatch } = context;
+              return (
+                <div>
+                <button onClick={() => dispatch({type: 'DECREMENT_Y'})}>decrementY by 1</button>
+                </div>  
+              )         
+            }
         }
         </MyContext.Consumer>
       </div> 

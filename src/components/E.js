@@ -6,14 +6,18 @@ export default class E extends Component {
     return (
         <div>
             <MyContext.Consumer>
-            {/* child of consumer is always a function */}
             {
-                (context) => (
-                <div>
-                <button onClick={context.incrementX}>incrementX by 1</button>
-                </div>
-                )
+                (context) => {
+                    console.log('context', context);
+                    
+                const { dispatch } = context;
+                return (
+                    <div>
+                    <button onClick={() => dispatch({type: 'INCREMENT_X'})}>incrementX by 1</button>
+                    </div>  
+                )         
             }
+            }       
             </MyContext.Consumer>
         </div> 
     )

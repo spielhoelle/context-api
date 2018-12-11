@@ -10,8 +10,8 @@ export default class D extends Component {
             {
                 (context) => (
                 <div>
-                <p>x = {context.state.x}</p>
-                <p>y = {context.state.y}</p>
+                <p>x = {context.x}</p>
+                <p>y = {context.y}</p>
                 </div>
                 )
             }
