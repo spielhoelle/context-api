@@ -1,24 +1,19 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { MyProvider, MyContext } from './context';
-import B from './components/B';
+import { MyProvider } from './context';
+import A from './components/A';
+import C from './components/C';
 
 class App extends Component {
   render() {
     return (
       <MyProvider>      
-        <MyContext.Consumer>
-        {/* child of consumer is always a function */}
-        {
-            (context) => (
-            <div>
-              <button onClick={context.incrementX}>incrementX</button>
-              <B />
-            </div>
-            )
-        }
-        </MyContext.Consumer>
+      <div className="App">
+        <h1>Context API</h1>
+        <A />
+        <C />
+      </div>
       </MyProvider>
     );
   }

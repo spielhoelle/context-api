@@ -1,19 +1,15 @@
 import React, { Component } from 'react'
-import { MyContext } from '../context';
+import D from './D';
+import E from './E';
 
 export default class C extends Component {
   render() {
     return (
-      <MyContext.Consumer>
-      {/* child of consumer is always a function */}
-      {
-          (context) => (
-          <div>
-            <p>x = {context.state.x}</p>
-          </div>
-          )
-      }
-      </MyContext.Consumer>
+      <div>
+        C
+        <D />
+        <E />
+      </div>
     )
   }
 }

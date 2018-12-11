@@ -7,9 +7,16 @@ export const MyContext = React.createContext();
 export class MyProvider extends Component {
 
   state = {
-    x: 0
+    x: 0,
+    y: 0
   };
   
+  decrementY = () => {
+    this.setState({
+      y: this.state.y - 1
+    })
+  }
+
   // we return a context provider
   render() {
     return (
@@ -20,7 +27,8 @@ export class MyProvider extends Component {
           this.setState({
             x: this.state.x + 1
           })
-        }
+        },
+        decrementY: this.decrementY
       }}>
         {this.props.children}
       </MyContext.Provider>
